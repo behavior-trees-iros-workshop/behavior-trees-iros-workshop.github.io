@@ -1,0 +1,31 @@
+# index page sections
+# custom following lines to edit your index page
+
+- id: Overview
+  i18n: nav.overview
+  name: Overview
+  tpl: overview.html
+  css:
+
+- id: program
+  i18n: nav.program
+  name: Program
+  tpl: program.html
+  css:
+
+- id: invited
+  i18n: nav.invited
+  name: Invited Speakers
+  tpl: invited.html
+  css: 
+
+- id: contribute
+  i18n: nav.contribute
+  name: Call for Papers
+  tpl: contribute.html
+  css: 
+
+- id: organizers
+  i18n: nav.organizers
+  name: Organizers
+  tpl: organizers.html
