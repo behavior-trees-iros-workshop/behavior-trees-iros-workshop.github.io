@@ -34,8 +34,11 @@
 			{% endif %}
 			
 
+				{% if navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i) %}
+		
+			<p> Mobile</p>
 			
-			
+			{% endif %}
         </div>
 
         {% for banner in site.data.index.banners offset:1 %}
