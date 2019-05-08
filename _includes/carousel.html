@@ -17,18 +17,18 @@
 
 			
 			{% if (navigator.userAgent.indexOf('IEMobile')) %}
+
+                            <div
+            class="header-back"
+            style="background-image: url({{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.mobile_banners[0].src }});"
+            title="{{ site.data.index.mobile_banners[0].title }}">
+            </div>
+			
+			{%else%}
     			<div
             class="header-back"
             style="background-image: url({{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.mobile_banners[0].src }});"
             title="{{ site.data.index.banners[0].title }}">
-            </div>
-            
-			
-			{%else%}
-                <div
-            class="header-back"
-            style="background-image: url({{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.mobile_banners[0].src }});"
-            title="{{ site.data.index.mobile_banners[0].title }}">
             </div>
 
 			{% endif %}
