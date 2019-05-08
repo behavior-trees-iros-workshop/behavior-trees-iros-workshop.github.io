@@ -16,7 +16,7 @@
             <!-- Set background for slide in css -->
 
 			
-			{% if (navigator.userAgent.indexOf('IEMobile')) %}
+			{% if (navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/Android/i)) %}
 
                             <div
             class="header-back"
