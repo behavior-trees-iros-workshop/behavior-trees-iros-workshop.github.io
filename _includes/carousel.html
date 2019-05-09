@@ -13,43 +13,13 @@
                     <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
                 </div>
             </div>
-            <!-- Set background for slide in css -->
-			
-			
-			
-			
-
-
-
-<div id="device" style="text-align: center; border:1px dotted black; color:green;"></div>
-
-
+            
             <div id="banner"
-            class="header-back"
-            title="{{ site.data.index.mobile_banners[0].title }}">
+            class="header-back">
             </div>
 
 
-<script type="text/javascript">
-  testExp = new RegExp('Android|webOS|iPhone|iPad|' +
-    		       'BlackBerry|Windows Phone|'  +
-    		       'Opera Mini|IEMobile|Mobile' , 
-    		      'i');
 
-  if (testExp.test(navigator.userAgent))
-  {
-       document.getElementById("device").innerHTML =
-       		"Your device is a Mobile Device";
-			document.getElementById("banner").style.cssText  = "background-image: url({{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.mobile_banners[0].src }});"
-  }
-  else
-  {
-       document.getElementById("banner").innerHTML = 
-       		"Your device is NOT a Mobile Device";
-						document.getElementById("banner").style.cssText  = "background-image: url({{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.banners[0].src }});"		
-  }
-   			 
-</script>
 
         </div>
 
@@ -70,3 +40,22 @@
     </div>
 
 </div>
+
+
+<!-- Set background different banner if on mobile or desktop -->
+<script type="text/javascript">
+  testExp = new RegExp('Android|webOS|iPhone|iPad|' +
+    		       'BlackBerry|Windows Phone|'  +
+    		       'Opera Mini|IEMobile|Mobile' , 
+    		      'i');
+
+  if (testExp.test(navigator.userAgent))
+  {
+		document.getElementById("banner").style.cssText  = "background-image: url({{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.mobile_banners[0].src }});"
+  }
+  else
+  {
+		document.getElementById("banner").style.cssText  = "background-image: url({{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.banners[0].src }});"		
+  }
+   			 
+</script>
