@@ -14,31 +14,43 @@
                 </div>
             </div>
             <!-- Set background for slide in css -->
-
 			
-			{% if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i)) %}
+			
+			
+			
 
-                            <div
+
+
+<div id="device" style="text-align: center; border:1px dotted black; color:green;"></div>
+
+
+            <div id="banner"
             class="header-back"
-            style="background-image: url({{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.mobile_banners[0].src }});"
             title="{{ site.data.index.mobile_banners[0].title }}">
             </div>
-			
-			{%else%}
-    			<div
-            class="header-back"
-            style="background-image: url({{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.banners[0].src }});"
-            title="{{ site.data.index.banners[0].title }}">
-            </div>
 
-			{% endif %}
-			
 
-				{% if navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i) %}
-		
-			<p> Mobile</p>
-			
-			{% endif %}
+<script type="text/javascript">
+  testExp = new RegExp('Android|webOS|iPhone|iPad|' +
+    		       'BlackBerry|Windows Phone|'  +
+    		       'Opera Mini|IEMobile|Mobile' , 
+    		      'i');
+
+  if (testExp.test(navigator.userAgent))
+  {
+       document.getElementById("device").innerHTML =
+       		"Your device is a Mobile Device";
+			document.getElementById("banner").style.cssText  = "background-image: url({{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.mobile_banners[0].src }});"
+  }
+  else
+  {
+       document.getElementById("banner").innerHTML = 
+       		"Your device is NOT a Mobile Device";
+						document.getElementById("banner").style.cssText  = "background-image: url({{ '/static/assets/img/' | prepend: site.baseurl }}{{ site.data.index.banners[0].src }});"		
+  }
+   			 
+</script>
+
         </div>
 
         {% for banner in site.data.index.banners offset:1 %}
