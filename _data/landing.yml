@@ -19,6 +19,12 @@
   tpl: invited.html
   css: 
 
+- id: oral
+  i18n: nav.oral
+  name: Oral Presentations
+  tpl: oral.html
+  css: 
+
 - id: contribute
   i18n: nav.contribute
   name: Call for Papers
